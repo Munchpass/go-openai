@@ -27,6 +27,9 @@ type ChatCompletionStreamChoiceDelta struct {
 
 	// not in the official documentation
 	FileData *ContentChoiceFileData `json:"file_data,omitempty"`
+
+	// For streaming reasoning tokens in OpenRouter.
+	Reasoning string `json:"reasoning,omitempty"`
 }
 
 type ChatCompletionStreamChoiceLogprobs struct {
