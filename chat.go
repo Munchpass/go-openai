@@ -272,6 +272,9 @@ type ChatCompletionRequest struct {
 	ReasoningEffort string `json:"reasoning_effort,omitempty"`
 	// Metadata to store with the completion.
 	Metadata map[string]string `json:"metadata,omitempty"`
+
+	// Used to support usage with OpenRouter or DeepSeek
+	ExtraBody map[string]any
 }
 
 type StreamOptions struct {
