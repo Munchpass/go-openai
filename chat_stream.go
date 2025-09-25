@@ -25,7 +25,7 @@ type ChatCompletionStreamChoiceDelta struct {
 	ReasoningContent string `json:"reasoning_content,omitempty"`
 
 	// not in the official documentation
-	FileData ContentChoiceFileData `json:"file_data,omitempty"`
+	FileData *ContentChoiceFileData `json:"file_data,omitempty"`
 }
 
 type ChatCompletionStreamChoiceLogprobs struct {
