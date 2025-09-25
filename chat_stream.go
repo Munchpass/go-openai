@@ -5,6 +5,12 @@ import (
 	"net/http"
 )
 
+type ContentChoiceFileData struct {
+	FileUrl  string `json:"file_url,omitempty"`
+	Data     []byte `json:"data,omitempty"`
+	MimeType string `json:"mime_type,omitempty"`
+}
+
 type ChatCompletionStreamChoiceDelta struct {
 	Content      string        `json:"content,omitempty"`
 	Role         string        `json:"role,omitempty"`
@@ -17,6 +23,9 @@ type ChatCompletionStreamChoiceDelta struct {
 	// the doc from deepseek:
 	// - https://api-docs.deepseek.com/api/create-chat-completion#responses
 	ReasoningContent string `json:"reasoning_content,omitempty"`
+
+	// not in the official documentation
+	FileData ContentChoiceFileData `json:"file_data,omitempty"`
 }
 
 type ChatCompletionStreamChoiceLogprobs struct {
